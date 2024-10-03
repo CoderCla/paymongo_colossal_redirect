@@ -13,7 +13,11 @@
 
     <script>
        function openMauiApp() {
-          window.location.href = "mymauiapp://";
+          if (/android|iphone|ipad/i.test(navigator.userAgent)) {
+            window.location.href = "colossal://";
+        } else {
+            alert("Please open this link on a mobile device.");
+        }
        }
     </script>
 </body>
